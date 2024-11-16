@@ -60,3 +60,24 @@ body {
   border-radius: 5px;
   font-weight: bold;
 }
+
+.input-item {
+  background-color: pink;
+  margin: 0 auto;
+  width: 800px;
+  padding: 50px 150px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 34px;
+}
+
+.btn-done {
+  color: white;
+  background-color: red;
+  border: 2px solid red;
+  height: 34px;
+  width: 100px;
+  border-radius: 5px;
+  font-weight: bold;
+}

@@ -15,5 +15,16 @@ inputItem.addEventListener("input", function (e) {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // form.style.backgroundColor = "red";
+  const newInput = document.createElement("div");
+  newInput.classList.add("input-item");
+  newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
+  container.append(newInput);
+  inputItem.value = "";
+});
+
+const btnDoneEl = document.querySelector(".btn-done");
+
+btnDoneEl.addEventListener("click", function (e) {
+  e.target.style.backgroundColor = "green";
+  // newInput.style.backgroundColor = "green";
 });
