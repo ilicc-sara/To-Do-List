@@ -26,12 +26,6 @@ form.addEventListener("submit", function (e) {
   btnDoneEl.addEventListener("click", function (e) {
     console.log(e.target);
 
-    e.target.style.backgroundColor = "green";
+    e.currentTarget.parentElement.style.backgroundColor = "green";
   });
 });
-
-// const btnDoneEl = document.querySelector(".btn-done");
-
-// btnDoneEl.addEventListener("click", function (e) {
-//   console.log(e.target);
-// });

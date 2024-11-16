@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  background-color: green;
+  background-color: rgb(219, 218, 255);
   width: 900px;
   margin: 0 auto;
   padding: 20px;
@@ -23,7 +23,7 @@ body {
 }
 
 .form {
-  background-color: purple;
+  background-color: rgb(52, 16, 172);
   margin: 0 auto;
   width: 800px;
   padding: 50px 150px;
@@ -42,18 +42,18 @@ body {
   padding-bottom: 3px;
   border-radius: 5px;
   border: none;
-  color: purple;
+  color: rgb(52, 16, 172);
   background-color: rgb(255, 255, 255, 0.7);
 }
 
 .input-name::placeholder {
   font-family: inherit;
-  color: rgb(128, 0, 128, 0.5);
+  color: rgb(52, 16, 172, 0.5);
 }
 
 .add-item {
   color: white;
-  background-color: purple;
+  background-color: rgb(52, 16, 172);
   border: 2px solid white;
   height: 30px;
   width: 100px;
@@ -62,7 +62,7 @@ body {
 }
 
 .input-item {
-  background-color: pink;
+  background: none;
   margin: 0 auto;
   width: 800px;
   padding: 50px 150px;
@@ -70,6 +70,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 34px;
+  border: 5px solid rgb(52, 16, 172);
 }
 
 .btn-done {
