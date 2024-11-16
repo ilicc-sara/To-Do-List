@@ -20,11 +20,18 @@ form.addEventListener("submit", function (e) {
   newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
   container.append(newInput);
   inputItem.value = "";
+
+  const btnDoneEl = document.querySelector(".btn-done");
+
+  btnDoneEl.addEventListener("click", function (e) {
+    console.log(e.target);
+
+    e.target.style.backgroundColor = "green";
+  });
 });
 
-const btnDoneEl = document.querySelector(".btn-done");
+// const btnDoneEl = document.querySelector(".btn-done");
 
-btnDoneEl.addEventListener("click", function (e) {
-  e.target.style.backgroundColor = "green";
-  // newInput.style.backgroundColor = "green";
-});
+// btnDoneEl.addEventListener("click", function (e) {
+//   console.log(e.target);
+// });
