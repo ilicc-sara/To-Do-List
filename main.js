@@ -20,7 +20,8 @@ form.addEventListener("submit", function (e) {
   const newInput = document.createElement("div");
   newInput.classList.add("input-item");
   newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
-  container.append(newInput);
+  // container.append(newInput);
+  container.insertAdjacentElement("afterend", newInput);
   inputItem.value = "";
   toDo.push({ name: inputName, isDone: false });
   console.log(toDo);
