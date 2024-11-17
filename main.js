@@ -25,11 +25,12 @@ form.addEventListener("submit", function (e) {
   toDo.push({ name: inputName, isDone: false });
   console.log(toDo);
 
-  const btnDoneEl = document.querySelector(".btn-done");
+  const btnDoneEl = document.querySelectorAll(".btn-done");
 
-  btnDoneEl.addEventListener("click", function (e) {
-    console.log(e.target);
-
-    e.currentTarget.parentElement.style.backgroundColor = "green";
+  btnDoneEl.forEach(function (btn, i) {
+    btn.addEventListener("click", function (e) {
+      // console.log(e.target);
+      e.currentTarget.parentElement.style.backgroundColor = "green";
+    });
   });
 });
