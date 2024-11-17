@@ -23,7 +23,12 @@ form.addEventListener("submit", function (e) {
   // container.append(newInput);
   container.insertAdjacentElement("afterend", newInput);
   inputItem.value = "";
+
   toDo.push({ name: inputName, isDone: false });
+
+  toDo.forEach(function (item, i) {
+    item.id = i + 1;
+  });
   console.log(toDo);
 
   const btnDoneEl = document.querySelectorAll(".btn-done");
