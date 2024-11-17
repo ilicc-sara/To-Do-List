@@ -9,8 +9,10 @@ let inputName;
 
 inputItem.addEventListener("input", function (e) {
   inputName = e.target.value;
-  console.log(inputName);
+  // console.log(inputName);
 });
+
+const toDo = [];
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -20,6 +22,8 @@ form.addEventListener("submit", function (e) {
   newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
   container.append(newInput);
   inputItem.value = "";
+  toDo.push({ name: inputName, isDone: false });
+  console.log(toDo);
 
   const btnDoneEl = document.querySelector(".btn-done");
 

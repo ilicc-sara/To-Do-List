@@ -9,11 +9,11 @@ html {
 }
 
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .container {
-  background-color: rgb(219, 218, 255);
+  background-color: white;
   width: 900px;
   margin: 0 auto;
   padding: 20px;
