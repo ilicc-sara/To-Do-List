@@ -25,6 +25,7 @@ form.addEventListener("submit", function (e) {
   newInput.setAttribute("data-id", newToDo.id);
 
   newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
+
   // container.append(newInput);
   // container.insertAdjacentElement("beforeend", newInput);
   container.insertAdjacentElement("afterend", newInput);
@@ -37,7 +38,7 @@ form.addEventListener("submit", function (e) {
 
   const btnDoneEl = document.querySelectorAll(".btn-done");
 
-  btnDoneEl.forEach(function (btn, i) {
+  btnDoneEl.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       // console.log(e.target.getAttribute(id));
       // console.log(e.target.parentElement.dataset.id);
