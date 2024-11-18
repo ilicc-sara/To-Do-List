@@ -22,13 +22,18 @@ form.addEventListener("submit", function (e) {
   const newInput = document.createElement("div");
   newInput.classList.add("input-item");
 
+  // let html = `<div class="input-item">${inputName} <button class="btn-done">DONE</button></div>`;
+
+  // container.insertAdjacentHTML("beforeend", html);
+  // let newInput = document.querySelector(".input-item");
+
   newInput.setAttribute("data-id", newToDo.id);
 
   newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
 
   // container.append(newInput);
-  // container.insertAdjacentElement("beforeend", newInput);
-  container.insertAdjacentElement("afterend", newInput);
+  container.insertAdjacentElement("beforeend", newInput);
+  // container.insertAdjacentElement("afterend", newInput);
   inputItem.value = "";
 
   // toDo.forEach(function (item, i) {
@@ -36,20 +41,29 @@ form.addEventListener("submit", function (e) {
   // });
   // console.log(toDo);
 
-  const btnDoneEl = document.querySelectorAll(".btn-done");
+  //////////////////////////////////////////////////////////////////////////////////////////
+  // event handle through btns
 
-  btnDoneEl.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      // console.log(e.target.getAttribute(id));
-      // console.log(e.target.parentElement.dataset.id);
-      // console.log(newToDo.id);
+  // const btnDoneEl = document.querySelectorAll(".btn-done");
 
-      if (e.target.parentElement.dataset.id === newToDo.id) {
-        newToDo.isDone = true;
-        console.log(newToDo);
-        console.log(toDo);
-      }
-      e.currentTarget.parentElement.style.backgroundColor = "green";
-    });
+  // btnDoneEl.forEach((btn) => {
+  //   btn.addEventListener("click", function (e) {
+  //     // console.log(e.target.getAttribute(id));
+  //     // console.log(e.target.parentElement.dataset.id);
+  //     // console.log(newToDo.id);
+
+  //     if (e.target.parentElement.dataset.id === newToDo.id) {
+  //       newToDo.isDone = true;
+  //       console.log(newToDo);
+  //       console.log(toDo);
+  //     }
+  //     e.target.parentElement.style.backgroundColor = "green";
+  //   });
+  // });
+
+  container.addEventListener("click", function (e) {
+    if (e.target.classList.contains("input-item")) {
+      console.log(e.target);
+    }
   });
 });
