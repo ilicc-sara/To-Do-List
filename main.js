@@ -18,6 +18,7 @@ const toDo = [];
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  if (!inputItem.value) return;
   const newToDo = { id: crypto.randomUUID(), name: inputName, isDone: false };
   toDo.push(newToDo);
 
