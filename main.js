@@ -7,6 +7,8 @@ const inputItem = document.querySelector(".input-name");
 const addBtn = document.querySelector(".add-item");
 let inputName;
 
+const toDoList = document.querySelector(".todo-list");
+
 inputItem.addEventListener("input", function (e) {
   inputName = e.target.value;
   // console.log(inputName);
@@ -19,39 +21,22 @@ form.addEventListener("submit", function (e) {
   const newToDo = { id: crypto.randomUUID(), name: inputName, isDone: false };
   toDo.push(newToDo);
 
-  const newInput = document.createElement("div");
+  const newInput = document.createElement("li");
   newInput.classList.add("input-item");
-
-  // let html = `<div class="input-item">${inputName} <button class="btn-done">DONE</button></div>`;
-
-  // container.insertAdjacentHTML("beforeend", html);
-  // let newInput = document.querySelector(".input-item");
 
   newInput.setAttribute("data-id", newToDo.id);
 
-  newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>`;
+  newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button> <ion-icon class="close" name="close-outline"></ion-icon>`;
 
-  // container.append(newInput);
-  container.insertAdjacentElement("beforeend", newInput);
-  // container.insertAdjacentElement("afterend", newInput);
+  // container.insertAdjacentElement("afterbegin", newInput);
+  toDoList.appendChild(newInput);
+
   inputItem.value = "";
 
-  // toDo.forEach(function (item, i) {
-  //   item.id = i + 1;
-  // });
-  // console.log(toDo);
-
-  //////////////////////////////////////////////////////////////////////////////////////////
-  // event handle through btns
-
-  // const btnDoneEl = document.querySelectorAll(".btn-done");
+  const btnDoneEl = document.querySelectorAll(".btn-done");
 
   // btnDoneEl.forEach((btn) => {
   //   btn.addEventListener("click", function (e) {
-  //     // console.log(e.target.getAttribute(id));
-  //     // console.log(e.target.parentElement.dataset.id);
-  //     // console.log(newToDo.id);
-
   //     if (e.target.parentElement.dataset.id === newToDo.id) {
   //       newToDo.isDone = true;
   //       console.log(newToDo);
@@ -61,9 +46,22 @@ form.addEventListener("submit", function (e) {
   //   });
   // });
 
-  container.addEventListener("click", function (e) {
-    if (e.target.classList.contains("input-item")) {
-      console.log(e.target);
-    }
-  });
+  // container.addEventListener("click", function (e) {
+  //   if (e.target.classList.contains("input-item")) {
+  //     console.log(e.target);
+  //   }
+  // });
+});
+
+toDoList.addEventListener("click", function (e) {
+  // if (e.target.classList.contains("input-item")) {
+  //   console.log(e.target);
+  //   console.log("to do je kliknut");
+  // }
+  // proveriti je li e.target dugme done
+  // ako jeste, nadji najblizi to do (closest)
+  // procitaj id sa to doa
+  // update status
+  //
+  // dodaj da se to do moze obrisati
 });
