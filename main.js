@@ -15,11 +15,12 @@ inputItem.addEventListener("input", function (e) {
 });
 
 const toDo = [];
+let newToDo;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!inputItem.value) return;
-  const newToDo = { id: crypto.randomUUID(), name: inputName, isDone: false };
+  newToDo = { id: crypto.randomUUID(), name: inputName, isDone: false };
   toDo.push(newToDo);
 
   const newInput = document.createElement("li");
@@ -55,10 +56,18 @@ form.addEventListener("submit", function (e) {
 });
 
 toDoList.addEventListener("click", function (e) {
-  // if (e.target.classList.contains("input-item")) {
-  //   console.log(e.target);
-  //   console.log("to do je kliknut");
-  // }
+  if (e.target.classList.contains("btn-done")) {
+    // console.log(e.target.closest(".input-item").dataset.id);
+    console.log(toDo);
+    let targetEl = toDo.find(
+      (x) => x.id === e.target.closest(".input-item").dataset.id
+    );
+    targetEl.isDone = true;
+    console.log(targetEl);
+    e.target.closest(".input-item").style.backgroundColor = "green";
+
+    e.target.closest(".input-item").querySelector(".close").remove();
+  }
   // proveriti je li e.target dugme done
   // ako jeste, nadji najblizi to do (closest)
   // procitaj id sa to doa
