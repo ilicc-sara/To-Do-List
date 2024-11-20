@@ -28,7 +28,10 @@ form.addEventListener("submit", function (e) {
 
   newInput.setAttribute("data-id", newToDo.id);
 
-  newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button> <ion-icon class="close" name="close-outline"></ion-icon>`;
+  newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>
+  <btn class="close"
+    ><ion-icon class="x-icon" name="close-outline"></ion-icon
+  ></btn>`;
 
   // container.insertAdjacentElement("afterbegin", newInput);
   toDoList.appendChild(newInput);
@@ -66,7 +69,7 @@ toDoList.addEventListener("click", function (e) {
     console.log(targetEl);
     e.target.closest(".input-item").style.backgroundColor = "green";
 
-    e.target.closest(".input-item").querySelector(".close").remove();
+    // e.target.closest(".input-item").querySelector(".close").remove();
   }
   // proveriti je li e.target dugme done
   // ako jeste, nadji najblizi to do (closest)
@@ -74,4 +77,10 @@ toDoList.addEventListener("click", function (e) {
   // update status
   //
   // dodaj da se to do moze obrisati
+});
+
+toDoList.addEventListener("click", function (e) {
+  if (e.target.classList.contains("close")) {
+    console.log("delete");
+  }
 });
