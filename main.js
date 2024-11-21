@@ -39,23 +39,6 @@ form.addEventListener("submit", function (e) {
   inputItem.value = "";
 
   const btnDoneEl = document.querySelectorAll(".btn-done");
-
-  // btnDoneEl.forEach((btn) => {
-  //   btn.addEventListener("click", function (e) {
-  //     if (e.target.parentElement.dataset.id === newToDo.id) {
-  //       newToDo.isDone = true;
-  //       console.log(newToDo);
-  //       console.log(toDo);
-  //     }
-  //     e.target.parentElement.style.backgroundColor = "green";
-  //   });
-  // });
-
-  // container.addEventListener("click", function (e) {
-  //   if (e.target.classList.contains("input-item")) {
-  //     console.log(e.target);
-  //   }
-  // });
 });
 
 toDoList.addEventListener("click", function (e) {
@@ -69,7 +52,7 @@ toDoList.addEventListener("click", function (e) {
     console.log(targetEl);
     e.target.closest(".input-item").style.backgroundColor = "green";
 
-    // e.target.closest(".input-item").querySelector(".close").remove();
+    // e.target.closest(".input-item").querySelector(".btn-done").remove();
   } else if (e.target.classList.contains("close")) {
     let indexEl = toDo.findIndex(
       (x) => x.id === e.target.closest(".input-item").dataset.id
@@ -77,15 +60,7 @@ toDoList.addEventListener("click", function (e) {
     toDo.splice(indexEl, 1);
     console.log(toDo);
 
-    // console.log("delete");
-    // console.log(e.target.closest(".input-item").dataset.id);
-    // if(e.target.closest('.input-item').dataset.id === )
-    // e.target.closest(".container").querySelector(".input-item").remove();
+    let deleteEL = e.target.closest(".input-item");
+    deleteEL.remove();
   }
 });
-
-// toDoList.addEventListener("click", function (e) {
-//   if (e.target.classList.contains("close")) {
-//     console.log("delete");
-//   }
-// });
