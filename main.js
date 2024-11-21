@@ -70,17 +70,22 @@ toDoList.addEventListener("click", function (e) {
     e.target.closest(".input-item").style.backgroundColor = "green";
 
     // e.target.closest(".input-item").querySelector(".close").remove();
+  } else if (e.target.classList.contains("close")) {
+    let indexEl = toDo.findIndex(
+      (x) => x.id === e.target.closest(".input-item").dataset.id
+    );
+    toDo.splice(indexEl, 1);
+    console.log(toDo);
+
+    // console.log("delete");
+    // console.log(e.target.closest(".input-item").dataset.id);
+    // if(e.target.closest('.input-item').dataset.id === )
+    // e.target.closest(".container").querySelector(".input-item").remove();
   }
-  // proveriti je li e.target dugme done
-  // ako jeste, nadji najblizi to do (closest)
-  // procitaj id sa to doa
-  // update status
-  //
-  // dodaj da se to do moze obrisati
 });
 
-toDoList.addEventListener("click", function (e) {
-  if (e.target.classList.contains("close")) {
-    console.log("delete");
-  }
-});
+// toDoList.addEventListener("click", function (e) {
+//   if (e.target.classList.contains("close")) {
+//     console.log("delete");
+//   }
+// });
