@@ -56,9 +56,9 @@ form.addEventListener("submit", function (e) {
   newInput.setAttribute("data-id", newToDo.getToDo().id);
 
   newInput.innerHTML = `${inputName} <button class="btn-done">DONE</button>
-  <btn id="close" class="close"
+  <button id="close" class="close"
     ><ion-icon id="close" class="x-icon" name="close-outline"></ion-icon
-  ></btn>`;
+  ></button>`;
 
   // container.insertAdjacentElement("afterbegin", newInput);
   toDoList.appendChild(newInput);
